@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Common custom aliases
+
+# Clear shortcut
+alias cl="clear"
+
+# LS all, colors
+alias ls="ls -aG"
+
+# Tar Gzip shortcuts
+alias tarc="tar -cvzf"
+alias tarx="tar -xf"
+
+# SCP and SFTP with SSH config
+alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
+alias sftp="sftp -F ~/.ssh/config -o VisualHostKey=yes"
+alias ssh="ssh -o VisualHostKey=yes"
