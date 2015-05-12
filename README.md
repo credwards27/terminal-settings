@@ -4,7 +4,7 @@ Bash and terminal environment settings.
 
 ## Usage
 
-The root of this repo represents your home directory, and all files should be linked/copied to their corresponding locations.
+The root of this repo represents your home directory, and all files (excluding repo files) should be linked/copied to their corresponding locations.
 
 To use the custom bash configurations, include the following code at the top of `.bash_profile`:
 
