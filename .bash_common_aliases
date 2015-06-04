@@ -16,3 +16,6 @@ alias tarx="tar -xf"
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
 alias sftp="sftp -F ~/.ssh/config -o VisualHostKey=yes"
 alias ssh="ssh -o VisualHostKey=yes"
+
+# Git log with arguments
+alias git-log="clear; git log --all --decorate --graph"
