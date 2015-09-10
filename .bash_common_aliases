@@ -10,7 +10,7 @@ alias ls="ls -aG"
 
 # Tar Gzip shortcuts
 alias tarc="tar -cvzf"
-alias tarx="tar -xf"
+alias tarx="tar -xvzf"
 
 # SCP and SFTP with SSH config
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
