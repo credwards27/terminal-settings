@@ -12,6 +12,9 @@ alias ls="ls -aG"
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"
 
+# Serialized, ascending date string (YYMMDD)
+alias sdate="date +%y%m%d"
+
 # SCP and SFTP with SSH config
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
 alias sftp="sftp -F ~/.ssh/config -o VisualHostKey=yes"
