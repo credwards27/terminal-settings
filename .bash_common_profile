@@ -16,4 +16,3 @@ fi
 if [ -f ~/.bash_common_functions ]; then
 	. ~/.bash_common_functions
 fi
-
