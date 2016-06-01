@@ -1,13 +1,95 @@
 #!/bin/bash
 
 # iTerm applescript to open a new tab in the same location as the current tab
-osascript -e "
-    tell application \"iTerm\"
-        tell the current terminal
-            launch session \"Default Session\"
-            tell the last session
-                write text \"cd $(pwd); clear\"
+osascript <<EOF
+
+--
+-- 3.x syntax
+--
+
+on ModernScript()
+    tell application "iTerm"
+        tell current window
+            set newTab to (create tab with default profile)
+        end tell
+        
+        tell current window
+            tell current session
+                write text "cd $(pwd); clear"
             end tell
         end tell
     end tell
-"
+end ModernScript
+
+--
+-- 2.x syntax
+--
+
+on LegacyScript()
+    tell application "iTerm"
+        tell the current window
+            launch session "Default Session"
+            tell the last session
+                write text "cd $(pwd); clear"
+            end tell
+        end tell
+    end tell
+end LegacyScript
+
+-- Split string on a specified delimiter
+on theSplit(theString, theDelimiter)
+    set oldDelimiters to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to theDelimiter
+    set theArray to every text item of theString
+    set AppleScript's text item delimiters to oldDelimiters
+    return theArray
+end theSplit
+
+on IsModernVersion(version)
+    set versionArray to my theSplit(version, ".")
+    set major to item 1 of versionArray
+    set minor to item 2 of versionArray
+    set patch to item 3 of versionArray
+    
+    -- What is major version?
+    if major < 2 then
+        return false
+    else if major > 2 then
+        return true
+    end if
+    
+    -- Major version 2, what is minor version?
+    if minor < 9 then
+        return false
+    else if minor > 9 then
+        return true
+    end if
+    
+    -- Major/minor version 2.9, what is patch version?
+    if patch < 20140903 then
+        return false
+    end if
+    
+    -- First version with new syntax
+    return true
+end IsModernVersion
+
+--
+-- Run the appropriate script
+--
+
+property modern: false
+
+tell application "iTerm"
+    if my IsModernVersion(version) then
+        set modern to true
+    end if
+end tell
+
+if modern then
+    my ModernScript()
+else
+    my LegacyScript()
+end if
+
+EOF
