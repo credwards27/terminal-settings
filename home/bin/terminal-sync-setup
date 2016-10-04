@@ -84,6 +84,12 @@ function setup() {
             fi
             ;;
             
+            # Show help
+            -h|--help)
+            less "$src_dir/../README.md"
+            exit
+            ;;
+            
             # Unknown option
             *)
             ;;
