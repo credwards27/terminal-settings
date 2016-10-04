@@ -20,17 +20,17 @@ match those in this `home/` directory.
 ### Options
 
 - `[-b|--bin <path>]`
-	- Symlinks the shared executables in the directory specified by `<path>`.
-		The symlinked will be named `common`, as in `<path>/common`. This must
-		be added to `$PATH` manually.
+    - Symlinks the shared executables in the directory specified by `<path>`.
+        The symlinked will be named `common`, as in `<path>/common`. This must
+        be added to `$PATH` manually.
 
 - `[-s|--snippet]`
-	- This flag will create a sample `.bash_profile_setup_snippet` file in the
-		user's home directory, which will contain the `.bash_profile` snippet
-		needed to include the shared settings. This snippet should be added
-		manually to the top of the user's `.bash_profile`.
-	- The `.bash_profile_setup_snippet` file created by this flag can be safely
-		removed after it has been copied into `.bash_profile`.
+    - This flag will create a sample `.bash_profile_setup_snippet` file in the
+        user's home directory, which will contain the `.bash_profile` snippet
+        needed to include the shared settings. This snippet should be added
+        manually to the top of the user's `.bash_profile`.
+    - The `.bash_profile_setup_snippet` file created by this flag can be safely
+        removed after it has been copied into `.bash_profile`.
 
 ## Usage
 
