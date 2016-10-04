@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git config --global user.name credwards27
+git config --global user.email credwards27@users.noreply.github.com
+
+git config --global core.excludesfile ~/.gitignore_global
+git config --global push.default simple
+git config --global color.ui true
+git config --global rebase.autosquash true
+
+git config --global alias.commend "commit --amend --no-edit"

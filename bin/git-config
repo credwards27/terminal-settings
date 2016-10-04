@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Load common git configs
+if [ -f ~/.git_common_sync ]; then
+	. ~/.git_common_sync
+fi
+
+# Load local git configs
+if [ -f ~/.git_sync ]; then
+	. ~/.git_sync
+fi
