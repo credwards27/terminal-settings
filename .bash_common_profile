@@ -9,10 +9,10 @@ export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;4
 
 # Load common aliases
 if [ -f ~/.bash_common_aliases ]; then
-	. ~/.bash_common_aliases
+    . ~/.bash_common_aliases
 fi
 
 # Load common functions
 if [ -f ~/.bash_common_functions ]; then
-	. ~/.bash_common_functions
+    . ~/.bash_common_functions
 fi

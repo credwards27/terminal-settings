@@ -2,10 +2,10 @@
 
 # Load common git configs
 if [ -f ~/.git_common_sync ]; then
-	. ~/.git_common_sync
+    . ~/.git_common_sync
 fi
 
 # Load local git configs
 if [ -f ~/.git_sync ]; then
-	. ~/.git_sync
+    . ~/.git_sync
 fi

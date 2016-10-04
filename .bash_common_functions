@@ -4,21 +4,21 @@
 
 # Clear the output and list the current directory after changing to it
 function cds() {
-	local LEN=$(($#-1))
-	local LS_ARGS=""
-	local DEST="$1"
-	
-	case $LEN in
-		# No ls arguments and no destination, return to home directory
-		-1)
-			local DEST="$HOME"
-		;;
-		# Get ls arguments
-		*)
-			local DEST="$1"
-			local LS_ARGS="${@:2}"
-		;;
-	esac
-	
-	\cd "$DEST" && ls $LS_ARGS
+    local LEN=$(($#-1))
+    local LS_ARGS=""
+    local DEST="$1"
+    
+    case $LEN in
+        # No ls arguments and no destination, return to home directory
+        -1)
+            local DEST="$HOME"
+        ;;
+        # Get ls arguments
+        *)
+            local DEST="$1"
+            local LS_ARGS="${@:2}"
+        ;;
+    esac
+    
+    \cd "$DEST" && ls $LS_ARGS
 }
