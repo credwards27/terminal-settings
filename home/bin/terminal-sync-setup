@@ -1,0 +1,99 @@
+#!/bin/bash
+
+function setup() {
+    #
+    # Create symlinks
+    #
+    
+    local files=(
+        ".bash_common_aliases"
+        ".bash_common_functions"
+        ".bash_common_profile"
+        ".git_common_sync"
+        ".gitignore_global"
+        ".vimrc"
+        ".vim"
+    ) \
+    src_dir=$(dirname $(cd $(dirname $0); pwd -P)) \
+    home_dir="$HOME" \
+    src_path dest_path cmd
+    
+    # Sanitize paths
+    src_dir=${src_dir%/}
+    home_dir=${home_dir%/}
+    
+    # Symlink config files and directories
+    for i in "${files[@]}"; do
+        src_path="$src_dir/$i"
+        dest_path="$home_dir/$i"
+        
+        if [[ ( -e $src_path ) && ( ! -e $dest_path ) ]]; then
+            # File or directory does not already exist in the home directory,
+            # symlink it
+            eval "ln -s $src_path $dest_path"
+            echo "Linked file at: $dest_path -> $src_path"
+        fi
+    done
+    
+    #
+    # Apply script arguments
+    #
+    
+    local args=( "$@" )
+    
+    for arg in "${args[@]}"; do
+        key="$1"
+        
+        case $key in
+            # Symlink binaries
+            -b|--bin)
+            bin_path="${2%/}"
+            bin_link_path="$bin_path/common"
+            
+            # Symlink binaries if valid bin directory path was specified
+            if [[ ( -d $bin_path ) ]]; then
+                if [[ ! -e $bin_link_path ]]; then
+                    eval "ln -s $src_dir/bin $bin_link_path"
+                    echo "Linked binaries at: $bin_link_path -> $src_dir/bin"
+                    
+                    # Shift past argument value
+                    shift
+                else
+                    echo "A file already exists at $bin_link_path"
+                fi
+            else
+                echo "$bin_path is not a valid directory"
+            fi
+            ;;
+            
+            # Create profile setup snippet file
+            -s|--snippet)
+            snippet_path="$home_dir/.bash_profile_setup_snippet"
+            
+            if [[ ! -e $snippet_path ]]; then
+                snippet=$(
+                    printf "if [ -f ~/.bash_common_profile ]; then"
+                    printf "\n    . ~/.bash_common_profile"
+                    printf "\nfi"
+                )
+                
+                echo "$snippet" > $snippet_path
+                echo "Created snippet file: $snippet_path"
+            else
+                echo "A file already exists at $snippet_path"
+            fi
+            ;;
+            
+            # Unknown option
+            *)
+            ;;
+        esac
+        
+        # Shift past argument key
+        shift
+    done
+    
+    echo "Terminal setup complete"
+}
+
+setup "$@"
