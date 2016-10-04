@@ -4,8 +4,10 @@ Bash and terminal environment settings.
 
 ## Usage
 
-The root of this repo represents your home directory, and all files (excluding
-repo files) should be linked/copied to their corresponding locations.
+The `home/` directory of this repo represents your home directory, and all files
+and directories in it should be symlinked/copied to the user's actual home
+directory. The file and directory names in the user's home directory should
+match those in this `home/` directory.
 
 To use the custom bash configurations, include the following code at the top of
 `.bash_profile`:
