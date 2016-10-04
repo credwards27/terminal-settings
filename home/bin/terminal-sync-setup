@@ -5,18 +5,19 @@ function setup() {
     # Create symlinks
     #
     
-    local files=(
-        ".bash_common_aliases"
-        ".bash_common_functions"
-        ".bash_common_profile"
-        ".git_common_sync"
-        ".gitignore_global"
-        ".vimrc"
-        ".vim"
-    ) \
-    src_dir=$(dirname $(cd $(dirname $0); pwd -P)) \
-    home_dir="$HOME" \
-    src_path dest_path cmd
+    local args=( "$@" ) \
+        files=(
+            ".bash_common_aliases"
+            ".bash_common_functions"
+            ".bash_common_profile"
+            ".git_common_sync"
+            ".gitignore_global"
+            ".vimrc"
+            ".vim"
+        ) \
+        src_dir=$(dirname $(cd $(dirname $0); pwd -P)) \
+        home_dir="$HOME" \
+        src_path dest_path cmd
     
     # Sanitize paths
     src_dir=${src_dir%/}
@@ -38,8 +39,6 @@ function setup() {
     #
     # Apply script arguments
     #
-    
-    local args=( "$@" )
     
     for arg in "${args[@]}"; do
         key="$1"
