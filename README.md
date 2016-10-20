@@ -6,6 +6,7 @@ Bash and terminal environment settings.
 
 Run the `home/bin/terminal-sync-setup` script to automatically configure the
 user's environment for shared settings. By default, binaries will not be linked.
+The setup script only needs to be run once when first setting up sharing.
 
 **Note:** The setup script will never overwrite existing files, and should warn
 if a conflict occurs.
@@ -59,7 +60,8 @@ for how to optionally do this with the setup script.
 ### Git Configurations
 
 **Note:** By default, git configurations are not synced automatically;
-`git-config` must be run manually.
+`git-config` must be run manually each time changes are made to the shared or
+local sync configuration.
 
 Global git configurations can be shared using the `home/bin/git-config` and
 `.git_common_sync` files. The `.git_common_sync` file contains shared
