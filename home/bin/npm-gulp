@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 npm i -D\
     babel-plugin-transform-builtin-extend\
     babel-plugin-transform-class-properties\
@@ -15,4 +17,4 @@ npm i -D\
     rollup-stream\
     run-sequence\
     vinyl-buffer\
-    vinyl-source-stream\
+    vinyl-source-stream
