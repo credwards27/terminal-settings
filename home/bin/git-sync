@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Load common git configs
 if [ -f ~/.git_common_sync ]; then

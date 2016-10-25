@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # iTerm applescript to open a new tab in the same location as the current tab
 osascript <<EOF
