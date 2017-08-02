@@ -8,11 +8,15 @@ npm i -D\
     babel-root-import\
     del\
     gulp\
+    gulp-clean-css\
     gulp-plumber\
     gulp-rename\
+    gulp-sass\
     gulp-sourcemaps\
     gulp-uglify\
     live-server\
+    minimist\
+    minimist-options\
     rollup-plugin-babel\
     rollup-plugin-includepaths\
     rollup-stream\
