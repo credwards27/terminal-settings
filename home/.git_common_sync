@@ -8,6 +8,9 @@ git config --global push.default simple
 git config --global color.ui true
 git config --global rebase.autosquash true
 
+git config --global mergetool.keepbackup false
+git config --global difftool.prompt false
+
 # Aliases
 
 git config --global alias.amend "commit --amend"
