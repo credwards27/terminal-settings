@@ -8,6 +8,9 @@ alias cl="clear"
 # LS all, colors
 alias ls="ls -aG"
 
+# Count items in directory
+alias count="$(which ls) | wc -l"
+
 # Tar Gzip shortcuts
 alias tarc="tar -cvzf"
 alias tarx="tar -xvzf"
@@ -19,3 +22,7 @@ alias sdate="date +%y%m%d"
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
 alias sftp="sftp -F ~/.ssh/config -o VisualHostKey=yes"
 alias ssh="ssh -o VisualHostKey=yes"
+
+# Node with inspector flags
+alias ni="node --inspect"
+alias nib="node --inspect-brk"
