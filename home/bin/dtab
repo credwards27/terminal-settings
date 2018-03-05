@@ -15,7 +15,7 @@ on ModernScript()
         
         tell current window
             tell current session
-                write text "cd $(pwd); clear"
+                write text "cd \"$(pwd)\"; clear"
             end tell
         end tell
     end tell
@@ -30,7 +30,7 @@ on LegacyScript()
         tell the current window
             launch session "Default Session"
             tell the last session
-                write text "cd $(pwd); clear"
+                write text "cd \"$(pwd)\"; clear"
             end tell
         end tell
     end tell
