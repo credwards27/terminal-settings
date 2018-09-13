@@ -28,6 +28,5 @@ git config --global alias.plog "log --all --decorate --graph"
 
 # Compact log
 git config --global alias.clog "log --graph --all --date=short "\
-"--pretty=format:\"%C(bold blue)%h%C(reset) %C(bold cyan)%ad "\
-"%C(bold green)[%an]%C(reset) |%C(bold yellow)%d%C(reset) %s%n%C(dim white)"\
-"------------------------------------------------------------%C(reset)\""
+"--pretty=format:'%C(bold blue)%h%C(reset) %C(cyan)%ad "\
+"%C(green)[%an]%C(reset) |%C(bold yellow)%d%C(reset) %s' --abbrev-commit"
