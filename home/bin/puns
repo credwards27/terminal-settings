@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+$serialized = $argv[1];
+
+var_dump(unserialize($serialized));
