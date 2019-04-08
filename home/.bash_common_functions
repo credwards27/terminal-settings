@@ -22,3 +22,8 @@ function cds() {
     
     \cd "$DEST" && ls $LS_ARGS
 }
+
+# Create a directory and immediately enter it (respects all parameters of mkdir)
+function mkcd() {
+    mkdir $@ && cd "${!#}"
+}
