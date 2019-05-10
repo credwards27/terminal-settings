@@ -11,8 +11,6 @@
 # Logs and databases #
 ######################
 *.log
-*.sql
-*.sqlite
 .netrwhist
 .sass-cache/
 sass-cache/
