@@ -21,6 +21,9 @@ alias sdate="date +%y%m%d"
 # Long date and time string (YYYY-MM-DD_HH-MM-SS)
 alias ldate='date +%Y-%m-%d_%H-%M-%S'
 
+# Basic backup
+alias backup='rsync -avP --delete --exclude=.DS_Store'
+
 # SCP and SFTP with SSH config
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
 alias sftp="sftp -F ~/.ssh/config -o VisualHostKey=yes"
