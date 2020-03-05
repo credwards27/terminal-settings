@@ -16,3 +16,9 @@ fi
 if [ -f ~/.bash_common_functions ]; then
     . ~/.bash_common_functions
 fi
+
+# Load common completions
+if [ -r /usr/local/etc/profile.d/bash_completion.sh ]; then
+    export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+    . /usr/local/etc/profile.d/bash_completion.sh
+fi
