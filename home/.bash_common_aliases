@@ -21,7 +21,9 @@ alias sdate="date +%y%m%d"
 # Long date and time string (YYYY-MM-DD_HH-MM-SS)
 alias ldate='date +%Y-%m-%d_%H-%M-%S'
 
-# Basic backup
+# Basic backup (backup <source> <destination>)
+# To copy a directory's contents, but not the parent directory itself, include a
+# trailing slash after <source> (backup source/dir/ destination/dir)
 alias backup='rsync -avP --delete --exclude=.DS_Store'
 
 # SCP and SFTP with SSH config
