@@ -24,7 +24,7 @@ alias ldate='date +%Y-%m-%d_%H-%M-%S'
 # Basic backup (backup <source> <destination>)
 # To copy a directory's contents, but not the parent directory itself, include a
 # trailing slash after <source> (backup source/dir/ destination/dir)
-alias backup='rsync -avP --delete --exclude=.DS_Store'
+alias backup='rsync -aAEvP --delete --exclude=.DS_Store'
 
 # SCP and SFTP with SSH config
 alias scp="scp -F ~/.ssh/config -o VisualHostKey=yes"
