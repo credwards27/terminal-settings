@@ -12,7 +12,7 @@ alias ls="ls -aG"
 alias count="$(which ls) | wc -l"
 
 # Tar Gzip shortcuts
-alias tarc="tar -cvzf"
+alias tarc="tar --exclude='.DS_Store' -cvzf"
 alias tarx="tar -xvzf"
 
 # Serialized, ascending date string (YYMMDD)
