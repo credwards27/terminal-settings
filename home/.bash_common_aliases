@@ -21,6 +21,10 @@ alias sdate="date +%y%m%d"
 # Long date and time string (YYYY-MM-DD_HH-MM-SS)
 alias ldate='date +%Y-%m-%d_%H-%M-%S'
 
+# Common tail commands with live updates
+alias tail20='tail -fn 20'
+alias tail100='tail -fn 100'
+
 # Basic backup (backup <source> <destination>)
 # To copy a directory's contents, but not the parent directory itself, include a
 # trailing slash after <source> (backup source/dir/ destination/dir)
