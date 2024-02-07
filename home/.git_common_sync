@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+CMD_WIP='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "WIP"'
+
 git config --global user.name credwards27
 git config --global user.email credwards27@users.noreply.github.com
 
@@ -24,6 +26,10 @@ git config --global alias.fcommit "commit --fixup"
 git config --global alias.it \
     "!git init && git commit -m 'Initial commit' --allow-empty"
 git config --global alias.st "status --short --branch"
+
+git config --global alias.wip "!${CMD_WIP}"
+git config --global alias.bwip \
+    "!BR_NAME=\$(git rev-parse --abbrev-ref HEAD); git checkout -b \"\${BR_NAME}-wip\"; ${CMD_WIP}"
 
 # Pretty log, expanded information
 git config --global alias.plog "log --all --decorate --graph"
