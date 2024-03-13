@@ -30,6 +30,8 @@ git config --global alias.st "status --short --branch"
 git config --global alias.wip "!${CMD_WIP}"
 git config --global alias.bwip \
     "!BR_NAME=\$(git rev-parse --abbrev-ref HEAD); git checkout -b \"\${BR_NAME}-wip\"; ${CMD_WIP}"
+git config --global alias.uwip \
+    "!sh -c 'if [ \"WIP\" == \"\$(git log -1 --pretty=%B)\" ]; then git reset HEAD^; else echo \"Last commit is not a WIP commit\"; fi'"
 
 # Pretty log, expanded information
 git config --global alias.plog "log --all --decorate --graph"
